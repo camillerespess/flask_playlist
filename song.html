@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale=1"
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon"
+      type="image/png"
+      href="{{url_for('.static', filename='images/favicon.png')}}">
+</head>
+<body>
+
+<div id="container2">
+  <h2>{{ music["Song"] }}</h2>
+  <img class="right" src="{{ url_for('static', filename= 'images/' + music['Image']) }}">
+
+  <p class="song">{{ music["Song"] }} is by {{ music["Artist"] }}  and was released in {{ music["Release-Date"] }}.</p>
+  <p class="song"> "{{ music["Lyric"] }}."</p>
+  <p class="song"> Take a listen: </p>
+  <audio controls preload="auto">
+  <source src="{{ url_for('static', filename= 'audio/' + music['Song-Preview']) }}" type="audio/mp3">
+  </audio>
+  <p class="song listen"><a class="song" href="{{ music["Spotify-Link"] }}">Hear the Kindness and Community playlist on Spotify.</a></p>
+  <p class="song listen"><a class="song" href="{{ url_for('index') }}">Return to the list</a> to select a different song. </p>
+</div>
+
+</body>
+</html>

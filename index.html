@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <title>kindess and community: a playlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="icon"
+      type="image/png"
+      href="{{url_for('.static', filename='images/favicon.png')}}">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">  
+</head>
+<body>
+
+
+<div id="container">
+  <div class="intro">
+  <h1>friends.</h1>
+  <p class="animated fadeIn delay-6s"> We get by with a little help from our friends, right?</p>
+  <p class="animated fadeIn delay-2s"> Here’s 20 songs about kindness and community.</p>
+</div>
+  <ul>
+  {% for pair in pairs  %}
+      <li><a href="{{ url_for('song', num=pair[0]) }}">{{ pair[1] }}</a></li>
+  {% endfor %}
+  </ul>
+<p class="listen"> Listen to the <a href="https://open.spotify.com/playlist/49FfDePrjbUMd7luM1m97L?si=jcOqbOldS6ylAZ_FzU7k0A"> Kindness and Community playlist on Spotify.  </a> </p>
+</div>
+
+</body>
+</html>
